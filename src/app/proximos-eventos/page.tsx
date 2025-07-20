@@ -623,7 +623,7 @@ function ProximosEventosPageContent() {
                       <CheckCircle className="w-12 h-12 text-green-500 mx-auto mb-3" />
                       <h3 className="text-lg font-semibold text-green-600 mb-2">Inscrição Confirmada!</h3>
                       <p className="text-gray-600 text-sm">
-                        Sua inscrição para "{evento.title}" foi realizada com sucesso. 
+                        Sua inscrição para &quot;{evento.title}&quot; foi realizada com sucesso. 
                         Você receberá um email de confirmação em breve.
                       </p>
                     </div>
