@@ -7,6 +7,7 @@ export const bannerSlides = [
       "Neste episódio fomos brindados com um testemunho impactante que fortaleceu mais a nossa fé em Deus, assiste agora a este maravilhoso episódio do Podfé.",
     button: "ASSISTIR AGORA!",
     buttonLink: "#",
+    videoId: "Dhs7pzjeAJE", // Example YouTube video ID
   },
   {
     bg: "/images/slide_2.png",
@@ -16,6 +17,7 @@ export const bannerSlides = [
       "Descubra histórias que inspiram e fortalecem a fé. Não perca este episódio especial do Podfé!",
     button: "VER AGORA",
     buttonLink: "#",
+    videoId: "WLgg--upNj0",
   },
   {
     bg: "/images/slide_3.png",
@@ -25,5 +27,6 @@ export const bannerSlides = [
       "Acompanhe relatos emocionantes e experiências de fé nesta nova temporada do Podfé!",
     button: "CONFIRA",
     buttonLink: "#",
+    videoId: "rFpxhsAgdNA",
   },
 ]; 

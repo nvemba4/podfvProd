@@ -1,6 +1,8 @@
 import React from "react";
+import Link from "next/link";
 
 type MidiaCard = {
+  id: number;
   image: string;
   category: string;
   title: string;
@@ -35,7 +37,7 @@ const Midia: React.FC = () => {
         {/* Main 3x2 grid (col-span-9) */}
         <div className="md:col-span-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {mainCards.map((item, idx) => (
-            <div key={idx} className="flex flex-col">
+            <Link key={item.id} href={`/midia?id=${item.id}`} className="flex flex-col cursor-pointer hover:shadow-lg transition-shadow">
               <div className="w-full aspect-video bg-gray-100  overflow-hidden mb-3">
                 <img
                   src={item.image}
@@ -49,7 +51,7 @@ const Midia: React.FC = () => {
               <h3 className="text-lg font-medium leading-tight">
                 {item.title}
               </h3>
-            </div>
+            </Link>
           ))}
         </div>
         {/* Second column (col-span-3)  <div className="md:col-span-2 flex flex-col gap-8">

@@ -1,5 +1,8 @@
 "use client";
 import * as React from "react";
+import { useRouter } from "next/navigation";
+import { mockEpisodes } from "@/mock/episodiosRecentesData";
+import Image from "next/image";
 
 export interface MainBannerHeaderSlide {
   backgroundImage: string;
@@ -9,9 +12,10 @@ export interface MainBannerHeaderSlide {
   promoButtonText: string;
   location?: string;
   extra?: string;
-  description?:string;
-  button?:string;
-  buttonLink?:string;
+  description?: string;
+  button?: string;
+  buttonLink?: string;
+  videoId?: string; // Add videoId for navigation
 }
 
 interface MainBannerHeader {
@@ -22,13 +26,25 @@ interface MainBannerHeader {
 
 const FADE_DURATION = 600; // ms
 
+const slides = mockEpisodes.map((ep) => ({
+  backgroundImage: ep.image,
+  title: ep.title,
+  subtitle: '',
+  promoText: '',
+  promoButtonText: '',
+  description: ep.description,
+  button: 'ASSISTIR AGORA!',
+  videoId: ep.idVideo,
+  id: ep.id,
+}));
+
 const MainBannerHeader: React.FC<MainBannerHeader> = ({
-  slides,
   autoPlay = true,
-  autoPlayInterval = 4000,
+  autoPlayInterval = 8000,
 }) => {
   const [current, setCurrent] = React.useState(0);
   const totalSlides = slides.length;
+  const router = useRouter();
 
   // Auto-advance
   React.useEffect(() => {
@@ -51,18 +67,23 @@ const MainBannerHeader: React.FC<MainBannerHeader> = ({
         <div
           key={i}
           className={`absolute inset-0 transition-opacity duration-700 ${i === current ? 'opacity-100 z-10' : 'opacity-0 z-0'}`}
-          style={{
-            backgroundImage: `url(${s.backgroundImage})`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            pointerEvents: 'none',
-          }}
-        />
+          style={{ position: 'absolute', inset: 0, pointerEvents: 'none', width: '100%', height: '100%' }}
+        >
+          <Image
+            src={s.backgroundImage}
+            alt={s.title}
+            fill
+            style={{ objectFit: 'cover' }}
+            priority={i === 0}
+            quality={100}
+            sizes="(max-width: 768px) 100vw, 100vw"
+          />
+        </div>
       ))}
       {/* Gradient Overlay (like ExploreShoppings) */}
-      <div className="absolute inset-0 bg-gradient-to-r from-black/50 to-gray-800/30 z-20" />
+      <div className="absolute inset-0 bg-gradient-to-r from-black/50 to-gray-800/30 z-20 pointer-events-none" />
       {/* Content */}
-      <div className="relative z-10 pb-8 max-w-2xl pl-8 md:pl-20 text-left text-white">
+      <div className="relative z-10 pb-8 max-w-2xl pl-8 md:pl-20 text-left text-white pointer-events-auto">
                 <div className="mb-2 text-red-500 font-semibold tracking-wide text-sm md:text-base">
                   {slide.title}
                 </div>
@@ -72,12 +93,14 @@ const MainBannerHeader: React.FC<MainBannerHeader> = ({
                 <p className="mb-6 text-base md:text-lg font-light">
                   {slide.description}
                 </p>
-                <a
-                  href={slide.buttonLink}
-                  className="inline-flex items-center gap-2 px-6 py-3 bg-red-600 hover:bg-red-700 rounded-full font-semibold text-white text-base transition"
+                <button
+                  type="button"
+                  onClick={() => router.push(`/episodioRecentes?ep=${slide.id}&idVideo=${slide.videoId}`)}
+                  className="inline-flex items-center gap-2 px-8 py-4 bg-red-600 hover:bg-red-700 rounded-full font-bold text-white text-lg shadow-lg transition z-20 mt-8 border-4 border-white border-opacity-40"
+                  style={{ position: 'relative', zIndex: 20, marginTop: '2rem', boxShadow: '0 6px 24px rgba(0,0,0,0.25)' }}
                 >
-                  <span className="text-xl">▶</span> {slide.button}
-                </a>
+                  <span className="text-2xl">▶</span> {slide.button}
+                </button>
               </div>
       {/* Dots */}
       {totalSlides > 1 && (

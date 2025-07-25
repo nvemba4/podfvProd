@@ -1,50 +1,65 @@
 export const mockEpisodes = [
   {
+    id: 0,
+    image: "/images/banner-home.png",
+    title: "Novo Episódio Especial",
+    subtitle: "TEMPORADA 3",
+    description: "Descubra um testemunho inspirador que vai fortalecer sua fé. Assista ao episódio mais recente do Podfé!",
+    button: "ASSISTIR AGORA!",
+    idVideo: "BSSKhNne7n4",
+  },
+  {
     id: 1,
     image: "/images/Curadas_para_curar.png",
-    title: "Mudar para a cidade grande pode ser bastante estressante",
-    description:
-    "Empresária de moda, serva de Deus e inspiração para milhares! O testemunho impactante de Gui Fernandes é um dos mais assistidos do nosso canal. Assista agora e deixe Deus falar ao seu coração!",
+    title: "Mudar para a cidade grande",
+    subtitle: "TEMPORADA 2",
+    description: "O testemunho impactante de Gui Fernandes é um dos mais assistidos do nosso canal. Assista agora e deixe Deus falar ao seu coração!",
+    button: "ASSISTIR AGORA!",
     idVideo: "Dhs7pzjeAJE",
   },
   {
     id: 2,
     image: "/images/Rectangle_2.png",
     title: "Uma História de Fé, Superação e Sucesso!",
-    description:
-      "Empresária de moda, serva de Deus e inspiração para milhares! O testemunho impactante de Gui Fernandes é um dos mais assistidos do nosso canal. Assista agora e deixe Deus falar ao seu coração!",
+    subtitle: "TEMPORADA 2",
+    description: "Empresária de moda, serva de Deus e inspiração para milhares! O testemunho impactante de Gui Fernandes é um dos mais assistidos do nosso canal. Assista agora e deixe Deus falar ao seu coração!",
+    button: "ASSISTIR AGORA!",
     idVideo: "WLgg--upNj0",
   },
   {
     id: 3,
     image: "/images/Podfe_Cover.png",
-    title: "Mudar para a cidade grande pode ser bastante estressante",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation",
+    title: "Cidade grande: desafios e fé",
+    subtitle: "TEMPORADA 1",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.",
+    button: "ASSISTIR AGORA!",
     idVideo: "rFpxhsAgdNA",
   },
   {
     id: 4,
     image: "/images/Curadas_para_curar.png",
-    title: "Mudar para a cidade grande pode ser bastante estressante",
-    description:
-    "Empresária de moda, serva de Deus e inspiração para milhares! O testemunho impactante de Gui Fernandes é um dos mais assistidos do nosso canal. Assista agora e deixe Deus falar ao seu coração!",
+    title: "Transformação pela fé",
+    subtitle: "TEMPORADA 1",
+    description: "Empresária de moda, serva de Deus e inspiração para milhares! O testemunho impactante de Gui Fernandes é um dos mais assistidos do nosso canal. Assista agora e deixe Deus falar ao seu coração!",
+    button: "ASSISTIR AGORA!",
     idVideo: "Dhs7pzjeAJE",
   },
   {
     id: 5,
     image: "/images/Rectangle_2.png",
-    title: "Uma História de Fé, Superação e Sucesso!",
-    description:
-      "Empresária de moda, serva de Deus e inspiração para milhares! O testemunho impactante de Gui Fernandes é um dos mais assistidos do nosso canal. Assista agora e deixe Deus falar ao seu coração!",
+    title: "Superação e Sucesso!",
+    subtitle: "TEMPORADA 1",
+    description: "Empresária de moda, serva de Deus e inspiração para milhares! O testemunho impactante de Gui Fernandes é um dos mais assistidos do nosso canal. Assista agora e deixe Deus falar ao seu coração!",
+    button: "ASSISTIR AGORA!",
     idVideo: "WLgg--upNj0",
   },
   {
     id: 6,
     image: "/images/Podfe_Cover.png",
-    title: "Mudar para a cidade grande pode ser bastante estressante",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation",
+    title: "Desafios na cidade grande",
+    subtitle: "TEMPORADA 1",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.",
+    button: "ASSISTIR AGORA!",
     idVideo: "rFpxhsAgdNA",
   },
 ]; 

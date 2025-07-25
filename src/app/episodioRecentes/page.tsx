@@ -29,9 +29,11 @@ const EpisodioRecentesPageContent = () => {
   };
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', background: '#fff', minHeight: '100vh', paddingTop: 40 }}>
+    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', background: '#fff', minHeight: '100vh', paddingTop: 0 }}>
       {idVideo ? (
-        <YoutubeScreen videoId={idVideo} size='large' />
+        <div style={{ width: '100vw', maxWidth: '100vw', marginLeft: 'calc(50% - 50vw)', marginRight: 0 }}>
+          <YoutubeScreen videoId={idVideo} size={{ width: '100vw', height: '40vw' }} />
+        </div>
       ) : (
         <div>No video selected.</div>
       )}
