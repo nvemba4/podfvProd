@@ -43,7 +43,7 @@ function EventosListPageContent() {
 
     return (
       <div className="min-h-screen bg-[#fdf6ef] flex justify-center py-8 px-2">
-        <div className="w-full max-w-4xl bg-white/90 rounded-2xl shadow-xl flex flex-col md:flex-row overflow-hidden">
+        <div className="w-full max-w-4xl bg-white/90 shadow-xl flex flex-col md:flex-row overflow-hidden">
           {/* Main Content */}
           <div className="flex-1 p-8 md:pr-4">
             {/* Hero Image with overlay */}
@@ -193,7 +193,7 @@ function EventosListPageContent() {
               className="block group cursor-pointer"
               onClick={() => router.push(`/eventos?id=${evento.id}`)}
             >
-              <div className="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col h-full transition hover:shadow-2xl">
+              <div className="bg-white shadow-lg overflow-hidden flex flex-col h-full transition hover:shadow-2xl">
                 <img
                   src={evento.image}
                   alt={evento.title}

@@ -44,15 +44,6 @@ const ProximoEventos: React.FC = () => {
   return (
     <section className="w-full max-w-7xl mx-auto px-4 pb-10 pt-8">
       <div className="mb-8">
-        <div className="flex items-center gap-2">
-          <span className="block w-6 h-0.5 bg-red-500"></span>
-          <button 
-            onClick={() => router.push('/proximos-eventos')}
-            className="text-red-500 font-semibold text-sm hover:underline uppercase cursor-pointer"
-          >
-            VER MAIS
-          </button>
-        </div>
         <h2 className="text-3xl font-bold text-gray-900 mt-1">PRÓXIMOS EVENTOS</h2>
       </div>
       <div className="relative">
@@ -76,7 +67,7 @@ const ProximoEventos: React.FC = () => {
           {mainCards.map((item, idx) => (
             <SwiperSlide key={idx}>
               <div 
-                className="flex flex-col cursor-pointer hover:shadow-lg transition-shadow bg-white rounded-xl overflow-hidden"
+                className="flex flex-col cursor-pointer hover:shadow-lg transition-shadow bg-white overflow-hidden"
                 onClick={() => router.push(`/proximos-eventos?id=${idx + 1}`)}
               >
                 <div className="w-full bg-gray-100 overflow-hidden">
@@ -135,6 +126,7 @@ const ProximoEventos: React.FC = () => {
           </button>
         </div>
       </div>
+    
     </section>
   );
 };

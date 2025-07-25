@@ -21,13 +21,13 @@ const Doacao: React.FC = () => {
     <section className="w-full max-w-7xl mx-auto px-4 pb-10 pt-8">
       <div className="mb-8">
         <div className="flex items-center gap-2">
-          <span className="block w-6 h-0.5 bg-red-500"></span>
-          <span className="text-red-500 font-semibold text-sm">{doacaoData.sectionLabel}</span>
+         
+          
         </div>
         <h2 className="text-3xl font-bold text-gray-900 mt-1">{doacaoData.sectionTitle}</h2>
       </div>
       <div
-        className="relative w-full h-[400px] md:h-[420px] rounded-lg overflow-hidden flex items-center"
+        className="relative w-full h-[400px] md:h-[420px] overflow-hidden flex items-center"
         style={{
           backgroundImage: `url(${doacaoData.image})`,
           backgroundSize: 'cover',

@@ -2,9 +2,9 @@ export const mockEpisodes = [
   {
     id: 0,
     image: "/images/banner-home.png",
-    title: "Novo Episódio Especial",
-    subtitle: "TEMPORADA 3",
-    description: "Descubra um testemunho inspirador que vai fortalecer sua fé. Assista ao episódio mais recente do Podfé!",
+    title: "Dalila Prata: Uma História de Dor, Fé e Superação",
+    subtitle: "TEMPORADA 2",
+    description: "No episódio #5 da segunda temporada do Podfé, recebemos Dalila Prata, uma jovem angolana, jornalista, teóloga, mãe e serva de Deus que carrega em si uma história marcada por profunda dor e uma fé inabalável.\n\nNascida na cidade do Huambo, Dalila mudou-se para Luanda em busca de melhores condições de vida. No entanto, sua trajetória foi abalada por trés perdas familiares: em um intervalo de apenas três meses, ela perdeu o marido, diagnosticado com câncer aos 29 anos (vindo a falecer aos 31), a mãe, vítima de câncer de mama, e o pai, também vencido pela mesma doença.\n\nMesmo diante de tamanha dor e luto, Dalila encontrou em Deus a força necessária para continuar. Sua fé se tornou ainda mais firme, e ela passou a viver com um propósito renovado: ajudar outras mulheres que enfrentam situações semelhantes.\n\nHoje, Dalila é uma Cristã comprometida, Presidente de uma associação de luta contra o câncer, palestrante e mentora de mulheres, usando sua história como instrumento de inspiração, fé e resiliência.\n\n\"O que me sustentou foi a certeza de que Deus não abandona os Seus, mesmo nas piores tempestades.\" – Dalila Prata\n\nSeu testemunho é uma prova viva de que, mesmo nas horas mais sombrias, a luz da fé pode guiar novos caminhos.",
     button: "ASSISTIR AGORA!",
     idVideo: "BSSKhNne7n4",
   },

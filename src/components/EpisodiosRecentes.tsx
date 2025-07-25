@@ -40,7 +40,7 @@ const EpisodioRecentesPageContent = () => {
     <section className="w-full max-w-7xl mx-auto px-4 py-1 pt-8 relative">
       <div className="flex items-center justify-between mb-6">
         <div>
-          <span className="text-red-600 font-semibold text-sm uppercase tracking-wide">VER MAIS</span>
+          
           <h2 className="text-3xl md:text-4xl font-bold mt-1">EPISÓDIOS RECENTES</h2>
         </div>
       </div>
@@ -66,21 +66,22 @@ const EpisodioRecentesPageContent = () => {
         >
           {episodes.map((ep, idx) => (
               <SwiperSlide key={ep.id}>
-                <Link href={`/episodioRecentes?ep=${ep.id}&idVideo=${ep.idVideo || ''}`} className="block group">
+                <div className="block group">
                   <motion.div
                     initial={{ opacity: 0, y: 40 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: idx * 0.1 }}
                     className="relative bg-white rounded shadow-lg overflow-hidden flex flex-col h-[480px] cursor-pointer group-hover:shadow-xl transition"
                   >
-                    <div className="relative w-full h-48">
-                <img
-                  src={ep.image}
-                  alt={ep.title}
-                        className="w-full h-full object-cover"
-                />
-                      {/* Overlay and Play Icon on Hover (image only) */}
-                      <div className="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <Link href={`/episodioRecentes?ep=${ep.id}&idVideo=${ep.idVideo || ''}`} className="flex-1 flex flex-col">
+                      <div className="relative w-full h-48">
+                        <img
+                          src={ep.image}
+                          alt={ep.title}
+                          className="w-full h-full object-cover"
+                        />
+                        {/* Overlay and Play Icon on Hover (image only) */}
+                        <div className="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                           <motion.span
                             initial={{ opacity: 0, scale: 0.7 }}
                             animate={{ opacity: 1, scale: 1 }}
@@ -91,26 +92,33 @@ const EpisodioRecentesPageContent = () => {
                           </motion.span>
                         </div>
                       </div>
-                <div className="flex-1 flex flex-col p-6">
-                  <h3 className="font-semibold text-xl mb-2 leading-snug">
-                    {ep.title}
-                  </h3>
-                  <p className="text-gray-700 text-base mb-6 flex-1">
-                    {episodes[0] && ep.description.length > episodes[0].description.length
-                      ? ep.description.slice(0, episodes[0].description.length) + '...'
-                      : ep.description}
-                  </p>
-                      <div className="flex items-center justify-end mt-auto">
-                      <span className="flex items-center gap-1 text-gray-500 text-sm cursor-pointer hover:text-red-600">
+                      <div className="flex-1 flex flex-col p-6">
+                        <h3 className="font-semibold text-xl mb-2 leading-snug">
+                          {ep.title}
+                        </h3>
+                        <p className="text-gray-700 text-base mb-6 flex-1">
+                          {ep.description.length > 150
+                            ? ep.description.slice(0, 150) + '...'
+                            : ep.description}
+                        </p>
+                      </div>
+                    </Link>
+                    <div className="flex items-center justify-end p-6 pt-0">
+                      <a
+                        href={`https://wa.me/?text=${encodeURIComponent(ep.title + ' - ' + ep.description + ' ' + window.location.origin + '/episodioRecentes?ep=' + ep.id + '&idVideo=' + ep.idVideo)}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-1 text-gray-500 text-sm cursor-pointer hover:text-red-600 mr-4"
+                        onClick={(e) => e.stopPropagation()}
+                      >
                         <FaShareAlt className="text-base" /> Compartilhar
-                      </span>
-                        <span className="flex items-center gap-1 text-gray-500 text-sm cursor-pointer hover:text-red-600 ml-6">
+                      </a>
+                      <span className="flex items-center gap-1 text-gray-500 text-sm cursor-pointer hover:text-red-600">
                         <FaHeart className="text-base" /> Gosto
                       </span>
                     </div>
-                  </div>
                   </motion.div>
-                </Link>
+                </div>
             </SwiperSlide>
           ))}
         </Swiper>

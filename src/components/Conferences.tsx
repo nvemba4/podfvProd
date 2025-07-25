@@ -113,10 +113,7 @@ const Conferences = () => {
   return (
     <section className="w-full max-w-7xl mx-auto px-4 pb-10 pt-8">
       <div className="mb-8">
-        <div className="flex items-center gap-2">
-          <span className="block w-6 h-0.5 bg-red-500"></span>
-          <span className="text-red-500 font-semibold text-sm">FAÇA PARTE</span>
-        </div>
+       
         <h2 className="text-3xl font-bold text-gray-900 mt-1">EVENTOS</h2>
       </div>
       <div

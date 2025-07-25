@@ -84,15 +84,6 @@ const MainBannerHeader: React.FC<MainBannerHeader> = ({
       <div className="absolute inset-0 bg-gradient-to-r from-black/50 to-gray-800/30 z-20 pointer-events-none" />
       {/* Content */}
       <div className="relative z-10 pb-8 max-w-2xl pl-8 md:pl-20 text-left text-white pointer-events-auto">
-                <div className="mb-2 text-red-500 font-semibold tracking-wide text-sm md:text-base">
-                  {slide.title}
-                </div>
-                <h2 className="text-3xl md:text-5xl font-bold leading-tight mb-4">
-                  {slide.subtitle}
-                </h2>
-                <p className="mb-6 text-base md:text-lg font-light">
-                  {slide.description}
-                </p>
                 <button
                   type="button"
                   onClick={() => router.push(`/episodioRecentes?ep=${slide.id}&idVideo=${slide.videoId}`)}

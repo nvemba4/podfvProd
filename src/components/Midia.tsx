@@ -33,11 +33,14 @@ const Midia: React.FC = () => {
 
   return (
     <section className="w-full max-w-7xl mx-auto px-4 pb-10">
+         
+         <h2 className="text-3xl md:text-3xl font-bold mb-4">CONTEÚDO EM DESTAQUE</h2>
       <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
+     
         {/* Main 3x2 grid (col-span-9) */}
         <div className="md:col-span-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {mainCards.map((item, idx) => (
-            <Link key={item.id} href={`/midia?id=${item.id}`} className="flex flex-col cursor-pointer hover:shadow-lg transition-shadow">
+            <Link key={item.id} href={`/midia?id=${item.id}`} className="flex flex-col cursor-pointer shadow-lg hover:shadow-lg transition-shadow">
               <div className="w-full aspect-video bg-gray-100  overflow-hidden mb-3">
                 <img
                   src={item.image}
@@ -45,12 +48,14 @@ const Midia: React.FC = () => {
                   className="w-full h-full object-cover"
                 />
               </div>
-              <span className={`block font-semibold mb-1 text-sm ${categoryColors[item.category] || "text-red-500"}`}>
-                {item.category}
-              </span>
-              <h3 className="text-lg font-medium leading-tight">
-                {item.title}
-              </h3>
+                <div className="flex flex-col  px-2 ">
+                  <span className={`block  mb-1 text-sm ${categoryColors[item.category] || "text-red-500"}`}>
+                    {item.category}
+                  </span>
+                  <h4 className="text-sm font-semibold leading-tight">
+                    {item.title}
+                  </h4>
+                </div>
             </Link>
           ))}
         </div>
@@ -83,6 +88,16 @@ const Midia: React.FC = () => {
             </div>
           ))}
         </div>
+      </div>
+      <div className="flex justify-start">
+        <Link 
+          href="/midia/list" 
+          className="inline-flex items-center px-0 py-4 font-bold text-red-600 transition-colors duration-200"
+          style={{ zIndex: 10, position: 'relative' }}
+        >
+          <div className="w-8 bg-red-600 rounded-full"></div>
+          <span>Ver mais </span>
+        </Link>
       </div>
     </section>
   );
